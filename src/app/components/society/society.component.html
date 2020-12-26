@@ -1,0 +1,17 @@
+<div class="container">
+    <h5 class="title">Society</h5>
+
+    <app-society-list *ngIf="step === 1"
+    [societies]="societies"
+    (add-handler)="add($event)"
+    (view-handler)="view($event)"
+    ></app-society-list>
+
+    <app-society-add *ngIf="step === 2" 
+    [is-view]="isView"
+    [society]="society"
+    (add-handler)="add($event)"
+    (close-handler)="close($event)"
+    ></app-society-add>
+</div>
+

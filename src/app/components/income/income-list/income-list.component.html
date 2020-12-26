@@ -1,0 +1,28 @@
+<div *ngIf="!isLoaded">Loading..</div>
+<div *ngIf="isLoaded">
+    <div>
+        <div class="badge">
+          <button class="btn btn-primary btn-sm" (click)="add()">+ Add</button>
+        </div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Sr.</th>
+              <th>Category</th>
+              <th>Source of Income</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let income of incomes let index = index;" (click)="view(income)">
+              <td>{{ index }}</td>
+              <td>{{ income.category }}</td>
+              <td>{{ income.sourceOfIncome }}</td>
+              <td>{{ income.amount }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>
+
+  

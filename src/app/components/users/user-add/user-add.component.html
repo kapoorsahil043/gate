@@ -1,0 +1,69 @@
+<div class="mark">
+    <div>
+      <div class="col-sm-12">
+          <form>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label for="userName">User Name</label>
+                  <input [(ngModel)]="user.userName" type="text" name="userName" 
+                  class="form-control" id="userName" aria-describedby="userNameHelp" 
+                  placeholder="Enter user name"  [readonly]="isView">
+                  <small id="userNameHelp" class="form-text text-muted">Enter user Name</small>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="password">Password</label>
+                  <input [(ngModel)]="user.password" type="text" name="password" 
+                  class="form-control" id="password" aria-describedby="passwordHelp" placeholder="Enter password"  [readonly]="isView">
+                  <small id="passwordHelp" class="form-text text-muted">Enter password</small>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <label for="contact">Contact</label>
+                  <input [(ngModel)]="user.contact" type="number" name="contact" 
+                  class="form-control" id="contact" aria-describedby="contactHelp" 
+                  placeholder="Enter contact"  [readonly]="isView">
+                  <small id="contactHelp" class="form-text text-muted">Enter contact</small>
+                </div>
+
+                <div class="col-sm-6">
+                  <div>
+                    <label for="type">Type</label>
+                    <select class="form-control" [(ngModel)]="user.type" name="type">
+                      <option>--Select--</option>
+                      <option *ngFor="let key of typeUserKeys" [value]="key">
+                        {{typeUser[key]}}
+                      </option>
+                      </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div>
+                    <label for="status">Status</label>
+                    <select class="form-control" [(ngModel)]="user.status" name="status">
+                      <option>--Select--</option>
+                      <option *ngFor="let key of typeStatusKeys" [value]="key">
+                        {{typeStatus[key]}}
+                      </option>
+                    </select>
+                  </div>
+                  </div>
+              </div>
+            </div>
+          </form>
+            <div *ngIf="!isView" class="badge">
+              <button class="btn btn-primary" (click)="add()">Save</button>
+            </div>
+            <div class="badge">
+              <button class="btn btn-primary" (click)="close()">Close</button>
+            </div>
+      </div>
+    </div>
+  </div>
+  

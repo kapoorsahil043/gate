@@ -1,0 +1,28 @@
+<div *ngIf="!isLoaded">Loading..</div>
+<div *ngIf="isLoaded">
+    <div>
+        <div class="badge">
+          <button class="btn btn-primary btn-sm" (click)="add()">+ Add</button>
+        </div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Sr.</th>
+              <th>Building Name</th>
+              <th>Contact</th>
+              <th>City</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let society of societies let index = index;" (click)="view(society)">
+              <td>{{ index }}</td>
+              <td>{{ society.name }}</td>
+              <td>{{ society.contact }}</td>
+              <td>{{ society.city }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>
+
+  

@@ -1,0 +1,18 @@
+<div class="container">
+    <h5 class="title">Income</h5>
+
+    <app-income-list *ngIf="step === 1"
+    [incomes]="incomes"
+    (add-handler)="add($event)"
+    (view-handler)="view($event)"
+    ></app-income-list>
+
+    <app-income-add *ngIf="step === 2" 
+    [is-view]="isView"
+    [categories]="categories"
+    [income]="income"
+    (add-handler)="add($event)"
+    (close-handler)="close($event)"
+    ></app-income-add>
+</div>
+

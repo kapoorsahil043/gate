@@ -1,0 +1,17 @@
+<div class="container">
+    <h5 class="title">Category</h5>
+
+    <app-category-list *ngIf="step === 1"
+    [categories]="categories"
+    (add-handler)="add($event)"
+    (view-handler)="view($event)"
+    ></app-category-list>
+
+    <app-category-add *ngIf="step === 2" 
+    [is-view]="isView"
+    [category]="category"
+    (add-handler)="add($event)"
+    (close-handler)="close($event)"
+    ></app-category-add>
+</div>
+

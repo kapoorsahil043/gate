@@ -1,0 +1,19 @@
+<div class="container">
+    <h5 class="title">Resident</h5>
+    <app-summary-resident *ngIf="step === 1"></app-summary-resident>
+
+    <app-resident-list *ngIf="step === 1" [residents] = "residents" 
+    (add-handler)="add($event)" 
+    (edit-handler)="edit($event)" (view-handler)="view($event)"
+    >
+    </app-resident-list>
+
+    <app-resident-add *ngIf="step === 2" 
+    [resident]="resident" 
+    [is-view]="isView"
+    (add-handler)="add($event)"
+    (close-handler)="close($event)"
+    >
+     </app-resident-add>
+</div>
+

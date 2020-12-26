@@ -1,0 +1,72 @@
+<div class="mark">
+    <div>
+      <div class="col-sm-12">
+          <form>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label for="name">Wing</label>
+                  <input [(ngModel)]="resident.wing" type="text" name="wing" class="form-control" id="wing" aria-describedby="wingHelp" placeholder="Enter wing">
+                  <small id="wingHelp" class="form-text text-muted">Enter wing</small>
+                </div>
+                <div class="col-sm-6">
+                  <label for="flat">Flat No.</label>
+                  <input [(ngModel)]="resident.flat" type="text" name="flatNo" class="form-control" id="flatNo" aria-describedby="flatHelp" placeholder="Enter flat no.">
+                  <small id="flatHelp" class="form-text text-muted">Enter flat no.</small>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <label for="name">Name</label>
+                  <input [(ngModel)]="resident.name" name="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter name">
+                  <small id="nameHelp" class="form-text text-muted">Enter name</small>
+                </div>
+                <div class="col-sm-6">
+                  <label for="contact">Contact No.</label>
+                  <input [(ngModel)]="resident.contact" type="number" name="contact" class="form-control" id="contact" aria-describedby="contactHelp" placeholder="Enter contact no.">
+                  <small id="contactHelp" class="form-text text-muted">Enter contact no.</small>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <label for="contact">Vehicle No.</label>
+                  <input [(ngModel)]="resident.vehicleNo" type="text" name="vehicleNo" class="form-control" id="vehicleNo" aria-describedby="vehicleNoHelp" placeholder="Enter vehicle no.">
+                  <small id="vehicleHelp" class="form-text text-muted">Enter vehicle no.</small>    
+                </div>
+                <div class="col-sm-6">
+                  <label for="parkingId">Parking ID.</label>
+                  <input [(ngModel)]="resident.parkingId" type="text" name="parkingId" class="form-control" id="parkingId" aria-describedby="parkingIdHelp" placeholder="Enter parking ID">
+                  <small id="parkingIdHelp" class="form-text text-muted">Enter parking ID</small>    
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-sm-6">
+                  <label for="contact">Maintenane Amount</label>
+                  <input [(ngModel)]="resident.maintenanceAmt" type="number" name="maintenanceAmt" class="form-control" id="maintenanceAmt" aria-describedby="maintenanceAmtHelp" placeholder="Enter maintenance amount">
+                  <small id="maintenanceAmtHelp" class="form-text text-muted">Enter maintenance amount</small>    
+                </div>
+                <div class="col-sm-6">
+                  <label for="familyMembers">Family Member(s)</label>
+                  <textarea [(ngModel)]="resident.familyMembers" name="familyMembers" class="form-control" id="familyMembers" aria-describedby="familyMembersHelp">
+                  </textarea>
+                  <small id="familyMembersHelp" class="form-text text-muted">Enter family members</small>
+                </div>
+              </div>
+              
+             
+
+            </div>
+          </form>
+            <div *ngIf="!isView" class="badge">
+              <button class="btn btn-primary" (click)="add()">Save</button>
+            </div>
+            <div class="badge">
+              <button class="btn btn-primary" (click)="close()">Close</button>
+            </div>
+      </div>
+    </div>
+  </div>
+  

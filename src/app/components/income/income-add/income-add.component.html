@@ -1,0 +1,52 @@
+<div class="mark">
+    <div>
+      <div class="col-sm-12">
+          <form>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-12" *ngIf="!isView">
+                    <label for="category">Category</label>
+                    <select class="form-control" [(ngModel)]="income.category" name="category">
+                        <option value="" selected></option>
+                        <option *ngFor="let list of categories" [value]="list.category">
+                          {{list.category}}
+                        </option>
+                    </select>
+                    <small id="categoryHelp" class="form-text text-muted">Select category</small>
+                </div>
+                
+                <div class="col-sm-12" *ngIf="isView">
+                    <label for="name">Category</label>
+                    <input [(ngModel)]="income.category" type="text" name="category" 
+                    class="form-control" id="category" aria-describedby="categoryHelp" 
+                    placeholder="Enter source of income"  [readonly]="isView">
+                </div>
+
+
+                <div class="col-sm-6">
+                  <label for="name">Source of Income</label>
+                  <input [(ngModel)]="income.sourceOfIncome" type="text" name="sourceOfIncome" 
+                  class="form-control" id="sourceOfIncome" aria-describedby="sourceOfIncomeHelp" 
+                  placeholder="Enter source of income"  [readonly]="isView">
+                  <small id="sourceOfIncomeHelp" class="form-text text-muted">Enter source of income</small>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="flat">Amount.</label>
+                  <input [(ngModel)]="income.amount" type="number" name="amount" 
+                  class="form-control" id="amount" aria-describedby="amountHelp" placeholder="Enter amount"  [readonly]="isView">
+                  <small id="amountHelp" class="form-text text-muted">Enter amount</small>
+                </div>
+              </div>
+            </div>
+          </form>
+            <div *ngIf="!isView" class="badge">
+              <button class="btn btn-primary" (click)="add()">Save</button>
+            </div>
+            <div class="badge">
+              <button class="btn btn-primary" (click)="close()">Close</button>
+            </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,70 @@
+<div class="mark">
+    <div>
+      <div class="col-sm-12">
+          <form>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label for="name">Building Name</label>
+                  <input [(ngModel)]="society.name" type="text" name="name" 
+                  class="form-control" id="sourceOfExpense" aria-describedby="nameHelp" 
+                  placeholder="Enter building name"  [readonly]="isView">
+                  <small id="nameHelp" class="form-text text-muted">Enter building name</small>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="flat">Address</label>
+                  <input [(ngModel)]="society.address" type="text" name="address" 
+                  class="form-control" id="address" aria-describedby="addressHelp" placeholder="Enter address"  [readonly]="isView">
+                  <small id="addressHelp" class="form-text text-muted">Enter contact</small>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <label for="name">Pincode</label>
+                  <input [(ngModel)]="society.pincode" type="number" name="pincode" 
+                  class="form-control" id="pincode" aria-describedby="pincodeHelp" 
+                  placeholder="Enter pincode"  [readonly]="isView">
+                  <small id="pincodeHelp" class="form-text text-muted">Enter pincode</small>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="flat">Contact</label>
+                  <input [(ngModel)]="society.contact" type="number" name="contact" 
+                  class="form-control" id="contact" aria-describedby="contactHelp" placeholder="Enter contact"  [readonly]="isView">
+                  <small id="contactHelp" class="form-text text-muted">Enter contact</small>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <label for="name">City</label>
+                  <input [(ngModel)]="society.city" type="text" name="city" 
+                  class="form-control" id="city" aria-describedby="cityHelp" 
+                  placeholder="Enter city"  [readonly]="isView">
+                  <small id="cityHelp" class="form-text text-muted">Enter city</small>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="flat">State</label>
+                  <input [(ngModel)]="society.state" type="text" name="state" 
+                  class="form-control" id="state" aria-describedby="stateHelp" placeholder="Enter state"  [readonly]="isView">
+                  <small id="stateHelp" class="form-text text-muted">Enter state</small>
+                </div>
+              </div>
+
+
+
+            </div>
+          </form>
+            <div *ngIf="!isView" class="badge">
+              <button class="btn btn-primary" (click)="add()">Save</button>
+            </div>
+            <div class="badge">
+              <button class="btn btn-primary" (click)="close()">Close</button>
+            </div>
+      </div>
+    </div>
+  </div>
+  

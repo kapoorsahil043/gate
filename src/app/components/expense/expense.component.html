@@ -1,0 +1,18 @@
+<div class="container">
+    <h5 class="title">Expense</h5>
+
+    <app-expense-list *ngIf="step === 1"
+    [expenses]="expenses"
+    (add-handler)="add($event)"
+    (view-handler)="view($event)"
+    ></app-expense-list>
+
+    <app-expense-add *ngIf="step === 2" 
+    [is-view]="isView"
+    [categories]="categories"
+    [expense]="expense"
+    (add-handler)="add($event)"
+    (close-handler)="close($event)"
+    ></app-expense-add>
+</div>
+

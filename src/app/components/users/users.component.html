@@ -1,0 +1,17 @@
+<div class="container">
+    <h5 class="title">Users</h5>
+
+    <app-user-list *ngIf="step === 1"
+    [users]="users"
+    (add-handler)="add($event)"
+    (view-handler)="view($event)"
+    ></app-user-list>
+
+    <app-user-add *ngIf="step === 2" 
+    [is-view]="isView"
+    [user]="user"
+    (add-handler)="add($event)"
+    (close-handler)="close($event)"
+    ></app-user-add>
+</div>
+

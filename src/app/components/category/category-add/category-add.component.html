@@ -1,0 +1,26 @@
+<div class="mark">
+    <div>
+      <div class="col-sm-12">
+          <form>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label for="name">Category</label>
+                  <input [(ngModel)]="category.category" type="text" name="category" 
+                  class="form-control" id="category" aria-describedby="categoryHelp" 
+                  placeholder="Enter category"  [readonly]= "isView">
+                  <small id="categoryHelp" class="form-text text-muted">Enter category</small>
+                </div>
+              </div>
+            </div>
+          </form>
+            <div *ngIf="!isView" class="badge">
+              <button class="btn btn-primary" (click)="add()">Save</button>
+            </div>
+            <div class="badge">
+              <button class="btn btn-primary" (click)="close()">Close</button>
+            </div>
+      </div>
+    </div>
+  </div>
+  

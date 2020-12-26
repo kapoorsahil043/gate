@@ -1,0 +1,41 @@
+<div *ngIf="!isLoaded">Loading..</div>
+<div *ngIf="isLoaded">
+        <div class="row">
+            <div class="col-md-3 col-xs-3">
+                <div class="card text-center">
+                    <div class="card-header">
+                        Owners
+                    </div>
+                    <div class="card-block">
+                        <p class="card-text">
+                            {{residentSummary.owners}}
+                        </p>    
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-3">
+                <div class="card text-center">
+                    <div class="card-header">
+                        Rents
+                    </div>
+                    <div class="card-block">
+                        <p class="card-text">
+                            {{residentSummary.rents}}
+                        </p>    
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-3">
+                <div class="card text-center">
+                    <div class="card-header">
+                        Empty Flats
+                    </div>
+                    <div class="card-block">
+                        <p class="card-text">
+                            {{residentSummary.emptyFlats}}
+                        </p>    
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
