@@ -16,7 +16,7 @@ export class SideBarComponent implements OnInit {
     if (this.router.url && this.router.url !== "/dashboard/" + url)
       console.log("navigate");
     this.router.navigate(["dashboard", url, {}], {
-      skipLocationChange: true,
+      skipLocationChange: false,
     });
   }
 }

@@ -25,7 +25,7 @@ export class CategoryAddComponent implements OnInit {
     this.addHandler.emit(temp);
   }
 
-  close(){
+  close(event?:any){
     this.closeHandler.emit();
   }
 

@@ -45,10 +45,12 @@ export const routes: Routes = [
       },
       {
         path: "society",
+        data:{preload:true},
         loadChildren: "../society/society.module#SocietyModule",
       },
       {
         path: "category",
+        data:{preload:true},
         loadChildren: "../category/category.module#CategoryModule",
       },
       {

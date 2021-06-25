@@ -63,7 +63,7 @@ export class IncomeComponent implements OnInit {
     this.isView = true;
   }
 
-  close(){
+  close(event?:any){
     this.step = 1; // render list sreen
     this.isView = false;
   }

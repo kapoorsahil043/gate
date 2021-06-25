@@ -27,17 +27,20 @@ export class ExpenseComponent implements OnInit {
     private categoryService:CategoryService) { }
 
   ngOnInit() {
+    console.log('ngOnInit')
     this.isLoaded = true;
     this.loadExpenses();
     this.loadCategories();
   }
 
   loadExpenses() {
+    console.log('loadExpenses')
     this.expenseService.getExpenses().subscribe((expenses:Expense[])=> this.expenses = expenses );
   }
 
   loadCategories() {
-    this.categoryService.getCategories().subscribe((categories:Category[])=> this.categories = categories );
+    console.log('this.loadCategories')
+    this.categoryService.getCategories().subscribe((categories:Category[])=> {this.categories = categories ; console.log('this.loadCategories, inside')} );
   }
 
   add(data){
@@ -64,7 +67,7 @@ export class ExpenseComponent implements OnInit {
     this.isView = true;
   }
 
-  close(){
+  close(event?:any){
     this.step = 1; // render list sreen
     this.isView = false;
   }

@@ -12,6 +12,7 @@ import { ToastrService } from './services/toastr.service';
 import { AuthService } from './services/auth.service';
 import { LoggingService } from './services/logging.service';
 import { AddTaxPipe } from './pipes/add-tax.pipe';
+import { AboutusModule } from "./components/aboutus/aboutus.module";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AddTaxPipe } from './pipes/add-tax.pipe';
     BrowserModule,
     AppRoutingModule,
     CommonSharedModule,
+    AboutusModule
   ],
   providers: [ToastrService,AuthService,LoggingService],
   bootstrap: [AppComponent],

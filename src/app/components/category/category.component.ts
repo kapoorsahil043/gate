@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Category } from 'src/app/data-model/Category';
 import { CategoryService } from 'src/app/services/category.service';
 import { ToastrService } from 'src/app/services/toastr.service';
@@ -8,7 +8,7 @@ import { ToastrService } from 'src/app/services/toastr.service';
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css']
 })
-export class CategoryComponent implements OnInit {
+export class CategoryComponent implements OnInit, OnChanges {
 
   step: number = 1;
   isEdit: boolean = false;
@@ -20,12 +20,21 @@ export class CategoryComponent implements OnInit {
 
   constructor(private categoryService: CategoryService,private toastrService:ToastrService) {}
 
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('log::CategoryComponent,ngOnChanges');
+  }
+
   ngOnInit() {
+    console.log('log::CategoryComponent,ngOnInit');
     this.loadCategories()
   }
   
   loadCategories() {
-    this.categoryService.getCategories().subscribe((list:Category[]) =>this.categories = list );
+    console.log('log::CategoryComponent,loadCategories');
+    this.categoryService.getCategories().subscribe((list:Category[]) =>{
+      this.categories = list;
+      console.log('test')
+    } );
   }
 
   add(data?:Category){
@@ -59,7 +68,7 @@ export class CategoryComponent implements OnInit {
     this.isView = true;
   }
 
-  close(){
+  close(event?:any){
     console.log('log::close');
     this.step = 1; // render list sreen
     this.isView = false;
