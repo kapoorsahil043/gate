@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnChanges, OnInit, SimpleChanges } from "@angular/core";
 import { Router } from "@angular/router";
 import { User } from 'src/app/data-model/User';
 import { AuthService } from 'src/app/services/auth.service';
@@ -9,9 +9,13 @@ declare var window: any;
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnChanges {
   constructor(private router: Router,private authService:AuthService,private toastrService:ToastrService) {}
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('ngOnChanges');
+  }
   user:User = new User;
+  test:string= "fale";
 
   ngOnInit() {
     window.uniqueDeviceId = 'uniqueDeviceId';

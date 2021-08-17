@@ -4,10 +4,10 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { AddTaxPipe } from "../pipes/add-tax.pipe";
-import { CustomUUID } from "./common-pipe";
+import { CommonPipeModule } from "./CommonPipe.module";
 @NgModule({
-  declarations: [AddTaxPipe,CustomUUID],
-  exports: [CommonModule, FormsModule, ReactiveFormsModule,HttpClientModule,AddTaxPipe,CustomUUID],
+  declarations: [AddTaxPipe,CommonPipeModule],
+  exports: [CommonModule, FormsModule, ReactiveFormsModule,HttpClientModule,AddTaxPipe,CommonPipeModule],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule],
 })
 export class CommonSharedModule {}

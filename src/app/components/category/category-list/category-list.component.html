@@ -14,7 +14,7 @@
           <tbody>
             <tr *ngFor="let category of categories let index = index;" (click)="view(category)">
               <td>{{ index }}</td>
-              <td>{{ category.category }}</td>
+              <td>{{ category.category | capitalLetter }}</td>
             </tr>
           </tbody>
         </table>

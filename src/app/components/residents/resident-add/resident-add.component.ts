@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Resident } from 'src/app/data-model/Resident';
 
 @Component({
@@ -7,7 +7,7 @@ import { Resident } from 'src/app/data-model/Resident';
   styleUrls: ['./resident-add.component.css'],
   changeDetection:ChangeDetectionStrategy.OnPush
 })
-export class AddResidentComponent implements OnInit {
+export class AddResidentComponent implements OnInit, OnChanges {
   @Input('resident') resident: Resident;
   @Input('is-view') isView:boolean;
   
@@ -15,6 +15,9 @@ export class AddResidentComponent implements OnInit {
   @Output('close-handler') closeHandler: EventEmitter<any> = new EventEmitter();  
 
   constructor() { }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('AddResidentComponent,ngOnChanges');
+  }
 
   ngOnInit() {
     console.log('AddResidentComponent,isView',this.isView);
