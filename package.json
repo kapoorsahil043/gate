@@ -12,8 +12,8 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/cli": "~8.3.23",
     "@angular/animations": "~8.2.14",
+    "@angular/cli": "~8.3.23",
     "@angular/common": "~8.2.14",
     "@angular/compiler": "~8.2.14",
     "@angular/core": "~8.2.14",
@@ -24,6 +24,7 @@
     "@types/clone": "^2.1.0",
     "bootstrap": "^4.5.3",
     "clone": "^2.1.2",
+    "express": "^4.17.1",
     "http-server": "^0.12.3",
     "immutable": "^4.0.0-rc.12",
     "jquery": "^3.5.1",
@@ -35,7 +36,6 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.23",
-    
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
     "@types/node": "~8.9.4",
